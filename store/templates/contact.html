@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | Karma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'main/img/banner/banner-bg.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-container {
+      width: 90%;
+      max-width: 800px;
+      /* background: rgba(255, 255, 255, 0.95); */
+      padding: 40px;
+      border-radius: 12px;
+      /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); */
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-header h2 {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .contact-header p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+      background: #fdfdfd;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .contact-form button {
+      margin-top: 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 40px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .contact-info i {
+      margin-right: 8px;
+      color: #007BFF;
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 20px;
+      }
+
+      .contact-header h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>Get in Touch</h2>
+      <p>Have a question about your order or our products? We're here to help!</p>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/xgvarjdv" method="POST">
+      <label for="name"><i class="fa fa-user"></i> Full Name</label>
+      <input type="text" name="name" id="name" placeholder="Your Name" required />
+
+      <label for="email"><i class="fa fa-envelope"></i> Email Address</label>
+      <input type="email" name="email" id="email" placeholder="you@example.com" required />
+
+      <label for="message"><i class="fa fa-comment"></i> Message</label>
+      <textarea name="message" id="message" rows="6" placeholder="How can we help you?" required></textarea>
+
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><i class="fa fa-phone"></i> Customer Support: 1-800-123-4567</p>
+      <p><i class="fa fa-clock"></i> Mon–Fri, 9 AM to 5 PM (EST)</p>
+      
+    </div>
+  </div>
+
+</body>
+</html>

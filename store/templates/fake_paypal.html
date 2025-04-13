@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Confirmation</title>
+  <style>
+   
+   body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'main/img/banner/banner-bg.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .payment-page {
+      /* background-color: rgba(255, 255, 255, 0.8);  */
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .payment-page img {
+      max-width: 180px;
+      margin-bottom: 30px;
+    }
+
+    .payment-page h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .payment-page p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .payment-page button {
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .payment-page button:hover {
+      background-color: #005fa3;
+    }
+    
+    .payment-page .info-box {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .payment-page .info-box p {
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-page">
+    <img src="{% static 'main/img/banner/paypal.webp' %}" alt="PayPal">
+    <h2>Payment Confirmation</h2>
+    <p>Your payment is being processed, please confirm below to complete your transaction.</p>
+    
+    <div class="info-box">
+      <p><strong>Thank you for your purchase!</strong></p>
+      <p>Your payment is secure and will be processed shortly.</p>
+    </div>
+
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Confirm Payment</button>
+    </form>
+  </div>
+
+</body>
+</html>
